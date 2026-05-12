@@ -11,6 +11,7 @@ import net.lax1dude.eaglercraft.v1_8.EaglercraftRandom;
 import net.lax1dude.eaglercraft.v1_8.PointerInputAbstraction;
 import net.lax1dude.eaglercraft.v1_8.Touch;
 import net.lax1dude.eaglercraft.v1_8.minecraft.EaglerTextureAtlasSprite;
+import net.lax1dude.eaglercraft.v1_8.vclient.EaglercraftVClient;
 
 import com.google.common.base.Predicate;
 import com.google.common.collect.Iterables;
@@ -321,6 +322,8 @@ public class GuiIngame extends Gui {
 			this.overlayPlayerList.updatePlayerList(true);
 			this.overlayPlayerList.renderPlayerlist(i, scoreboard, scoreobjective1);
 		}
+
+		EaglercraftVClient.getInstance().renderHud(this.mc, scaledresolution);
 
 		GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
 
@@ -927,6 +930,7 @@ public class GuiIngame extends Gui {
 		}
 
 		++this.updateCounter;
+		EaglercraftVClient.getInstance().tickPerformance(this.mc);
 		if (this.mc.thePlayer != null) {
 			ItemStack itemstack = this.mc.thePlayer.inventory.getCurrentItem();
 			if (itemstack == null) {
