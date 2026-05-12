@@ -58,13 +58,13 @@ EaglercraftX 1.8 fully supports singleplayer mode through an integrated server. 
 
 You can also import and export your existing vanilla Minecraft 1.8 worlds into EaglercraftX using ZIP files if you want to try playing all your old 1.8 maps in a modern browser. The glitch that caused some chunks to become corrupt when exporting worlds as vanilla in Eaglercraft 1.5.2 no longer happens in EaglercraftX 1.8, its perfect now. Beware that the inventories of LAN world players are not saved when the world is converted to vanilla, and pets (dogs, cats, horses, etc) might sometimes forget their owners due to the UUID changes.
 
-## Shared Worlds
+## EaglercraftV Realms
 
-**This feature used to be known as "LAN Worlds" but has been renamed to "Shared Worlds" to avoid confusion**
+**This feature used to be known as "LAN Worlds" but has been renamed to "EaglercraftV Realms" to avoid confusion**
 
 If you would like to invite other players to join your singleplayer world and play the game together, use the "Invite" button in the pause menu. You can configure gamemode and cheats for the other players joining your world, you can also decide if you would like to hide your world from other people on your wifi network or advertise your world to them. If hidden is "off" then other people on your same wifi network will see your world listed on their game's "Multiplayer" screen with all of their servers like how sharing LAN worlds behave in vanilla Minecraft 1.8.
 
-Once you press "Start Shared World", EaglercraftX 1.8 will give you a "join code" (usually 5 letters) to share with your friends. On a different device, go the "Multiplayer" screen and press "Direct Connect" and press "Join Shared World", enter the join code given to you when you started the shared world and press "Join World". Given a few seconds, the client should successfully be able to join your shared world from any other device on the internet that also has unrestricted internet access. If it does not work, check the "Network Settings" screen and make sure you and your friends all have the same set of shared world relay URLs configured or your clients will not be able to find each other.
+Once you press "Start EaglercraftV Realm", EaglercraftX 1.8 will give you a "join code" (usually 5 letters) to share with your friends. On a different device, go the "Multiplayer" screen and press "Direct Connect" and press "Join EaglercraftV Realm", enter the join code given to you when you started the EaglercraftV Realm and press "Join World". Given a few seconds, the client should successfully be able to join your EaglercraftV Realm from any other device on the internet that also has unrestricted internet access. If it does not work, check the "Network Settings" screen and make sure you and your friends all have the same set of EaglercraftV Realm relay URLs configured or your clients will not be able to find each other.
 
 If you would like to host your own relay, the JAR file and instructions can be downloaded from the "Network Settings" screen in the client. EaglercraftX 1.8 uses the same "LAN world" relay server that is used by Eaglercraft 1.5.2, however there have been several bug fixes. The current version is available in the `sp-relay/SharedWorldRelay` folder.
 
@@ -74,7 +74,7 @@ EaglercraftX 1.8 includes a deferred physically-based renderer modeled after the
 
 ## Voice Chat
 
-EaglercraftX 1.8 includes an integrated voice-chat service that can be used in shared worlds and also on multiplayer servers when it is enabled by the server owner. This feature also uses WebRTC like shared worlds, so be careful that you don't leak your IP address accidentally by using it on a public server. If you own a website and don't want people to use voice chat on it, edit the `eaglercraftXOpts` variable in your index.html and add `allowVoiceClient: false`.
+EaglercraftX 1.8 includes an integrated voice-chat service that can be used in EaglercraftV Realms and also on multiplayer servers when it is enabled by the server owner. This feature also uses WebRTC like EaglercraftV Realms, so be careful that you don't leak your IP address accidentally by using it on a public server. If you own a website and don't want people to use voice chat on it, edit the `eaglercraftXOpts` variable in your index.html and add `allowVoiceClient: false`.
 
 ## Resource Packs
 
@@ -120,7 +120,7 @@ The default eaglercraftXOpts values is this:
 - `resourcePacksDB:` the name of the IndexedDB database to store resource packs in
 - `demoMode:` whether to launch the game in java edition demo mode
 - `servers:` a list of default servers to display on the Multiplayer screen
-- `relays:` the default list of shared world relays to use for invites
+- `relays:` the default list of EaglercraftV Realm relays to use for invites
 - `checkGLErrors:` if the game should check for opengl errors
 - `checkShaderGLErrors:` enables more verbose opengl error logging for the shaders
 - `enableDownloadOfflineButton:` whether to show a "Download Offline" button on the title screen
@@ -172,7 +172,7 @@ The default eaglercraftXOpts values is this:
 
 ### Using Hooks
 
-You may want to implement some custom logic for loading/saving certain local storage keys. The eaglercraftXOpts hooks section can be used to override the client's local storage load and save functions. Currently, local storage keys are used to save game settings, the user's profile, custom servers, and shared world relays. Worlds and resource packs do not use local storage keys because modern browsers limit local storage keys to only 5 megabytes per domain which is too small for saving entire worlds and resource packs. Worlds and resource packs are saved using [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API).
+You may want to implement some custom logic for loading/saving certain local storage keys. The eaglercraftXOpts hooks section can be used to override the client's local storage load and save functions. Currently, local storage keys are used to save game settings, the user's profile, custom servers, and EaglercraftV Realm relays. Worlds and resource packs do not use local storage keys because modern browsers limit local storage keys to only 5 megabytes per domain which is too small for saving entire worlds and resource packs. Worlds and resource packs are saved using [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API).
 
     window.eaglercraftXOpts = {
         ...
@@ -194,7 +194,7 @@ You may want to implement some custom logic for loading/saving certain local sto
 
 Be aware that the client will still save the key to the browser's local storage anyway even if you define a custom save handler, and will just attempt to load the key from the browser's local storage normally if you return null, these are meant to be used like event handlers for creating backups of keys instead of completely replacing the local storage save and load functions.
 
-On a normal client you will only ever need to handle local storage keys called `p` (profile), `g` (game settings), `s` (server list), `r` (shared world relays), in your hooks functions. Feel free to just ignore any other keys. It is guaranteed that the data the client stores will always be valid base64, so it is best practice to decode it to raw binary first if possible to reduce it's size before saving it to something like a MySQL database in your backend if you are trying to implement some kind of profile syncing system for your website. The keys already have GZIP compression applied to them by default so don't bother trying to compress them yourself a second time because it won't reduce their size.
+On a normal client you will only ever need to handle local storage keys called `p` (profile), `g` (game settings), `s` (server list), `r` (EaglercraftV Realm relays), in your hooks functions. Feel free to just ignore any other keys. It is guaranteed that the data the client stores will always be valid base64, so it is best practice to decode it to raw binary first if possible to reduce it's size before saving it to something like a MySQL database in your backend if you are trying to implement some kind of profile syncing system for your website. The keys already have GZIP compression applied to them by default so don't bother trying to compress them yourself a second time because it won't reduce their size.
 
 ### Crash Report Hook
 

@@ -483,7 +483,7 @@ eaglercraft.singleplayer.failed.serverCrash=Integrated server encountered an exc
 eaglercraft.singleplayer.failed.demo.title=Could not start demo
 eaglercraft.singleplayer.failed.demo.desc=Failed to start integrated server!
 
-eaglercraft.singleplayer.notSupported.title=Shared worlds are not supported on this browser!
+eaglercraft.singleplayer.notSupported.title=EaglercraftV Realms are not supported on this browser!
 eaglercraft.singleplayer.notSupported.desc=WebRTC is not supported
 
 eaglercraft.singleplayer.import.title=Import World
@@ -532,7 +532,7 @@ eaglercraft.selectWorld.ramdiskWarning=WARNING: Running in "RAMDisk mode", world
 
 eaglercraft.singleplayer.tpscounter.singleThreadMode=Single Thread Mode
 
-eaglercraft.networkSettings.title=Shared World Relay Servers
+eaglercraft.networkSettings.title=EaglercraftV Realm Relay Servers
 eaglercraft.networkSettings.add=Add Relay
 eaglercraft.networkSettings.delete=Delete Relay
 eaglercraft.networkSettings.default=Set Primary
@@ -544,7 +544,7 @@ eaglercraft.networkSettings.relayTimeoutTitle=Change Connection Timeout
 eaglercraft.networkSettings.downloadRelay=Download JAR
 
 eaglercraft.directConnect.prompt=What would you like to do?
-eaglercraft.directConnect.lanWorld=Join Shared World
+eaglercraft.directConnect.lanWorld=Join EaglercraftV Realm
 eaglercraft.directConnect.lanWorldCode=Enter Join Code:
 eaglercraft.directConnect.networkSettingsNote=Click 'Network Settings' to add a relay URL
 eaglercraft.directConnect.ipGrabNote=Note: The world's owner can get your IP address
@@ -552,9 +552,9 @@ eaglercraft.directConnect.serverJoin=Connect to Server
 eaglercraft.directConnect.lanWorldJoin=Join World
 eaglercraft.directConnect.lanWorldRelay=Network Settings
 
-eaglercraft.lanInfo.title=Shared World Info
-eaglercraft.lanInfo.desc.0=Eaglercraft shared worlds are NOT limited to your local network like vanilla LAN worlds. This means that anyone with an internet connection and connection to the invite relay can join your world provided they have the code.
-eaglercraft.lanInfo.desc.1=Join a shared world from the %s screen, or create one with the %s button while in a world.
+eaglercraft.lanInfo.title=EaglercraftV Realm Info
+eaglercraft.lanInfo.desc.0=EaglercraftV Realms are NOT limited to your local network like vanilla LAN worlds. This means that anyone with an internet connection and connection to the invite relay can join your world provided they have the code.
+eaglercraft.lanInfo.desc.1=Join a EaglercraftV Realm from the %s screen, or create one with the %s button while in a world.
 
 eaglercraft.lanServer.legacyClient=Please use EaglercraftX 1.8!
 
@@ -568,8 +568,8 @@ eaglercraft.lanServer.worldName=World Name:
 eaglercraft.lanServer.hidden=Hidden:
 eaglercraft.lanServer.hideCode=hide details
 eaglercraft.lanServer.showCode=show details
-eaglercraft.lanServer.opened=Shared world opened on $relay$, join code is §a$code$
-eaglercraft.lanServer.closed=Shared world closed
+eaglercraft.lanServer.opened=EaglercraftV Realm opened on $relay$, join code is §a$code$
+eaglercraft.lanServer.closed=EaglercraftV Realm closed
 eaglercraft.lanServer.pleaseWait=Please Wait...
 eaglercraft.lanServer.relayDisconnected=Warning: connection to invite relay was lost, you must re-share the world to invite more people
 eaglercraft.lanServer.ipGrabNote=Note: Players joining your world can get your IP address
@@ -583,7 +583,7 @@ eaglercraft.addRelay.removeText1=Do you want to remove this relay?
 
 eaglercraft.noRelay.title=No Relays are Configured!
 eaglercraft.noRelay.titleFail=No Working Relays Available!
-eaglercraft.noRelay.noRelay1=Shared Worlds Unavailable: No Relays Configured!
+eaglercraft.noRelay.noRelay1=EaglercraftV Realms Unavailable: No Relays Configured!
 eaglercraft.noRelay.noRelay2=Click '§nNetwork Settings§r' to fix
 eaglercraft.noRelay.worldNotFound1=Could not locate '§c$code$§r'!
 eaglercraft.noRelay.worldNotFound2=Make sure to add the '§f$code$§r' world's relay URL
@@ -593,7 +593,7 @@ eaglercraft.noRelay.worldFail=Failed to connect to '$code$'!
 eaglercraft.singleplayer.demo.create.title=What do you wanna do?
 eaglercraft.singleplayer.demo.create.create=Play Demo World
 eaglercraft.singleplayer.demo.create.create.tooltip=Play the Minecraft 1.8 demo and invite others
-eaglercraft.singleplayer.demo.create.join=Join Shared World
+eaglercraft.singleplayer.demo.create.join=Join EaglercraftV Realm
 eaglercraft.singleplayer.demo.create.join.tooltip=Join someone else's world and play multiplayer
 
 eaglercraft.createWorld.seedNote=Note: Vanilla seeds work
@@ -866,9 +866,9 @@ addServer.resourcePack.prompt=Prompt
 eaglercraft.addServer.enableCookies=Cookies
 eaglercraft.addServer.enableCookies.enabled=Enabled
 eaglercraft.addServer.enableCookies.disabled=Disabled
-lanServer.title=Shared World
+lanServer.title=EaglercraftV Realm
 lanServer.scanning=Scanning for games on your local network
-lanServer.start=Start Shared World
+lanServer.start=Start EaglercraftV Realm
 lanServer.otherPlayers=Settings for Other Players
 mcoServer.title=Minecraft Online World
 

@@ -59,7 +59,7 @@ public class GuiScreenLANConnecting extends GuiScreen {
 		this.parent = parent;
 		this.code = code;
 		this.relay = relay;
-		Minecraft.getMinecraft().setServerData(new ServerData("Shared World", "shared:" + relay.address, false));
+		Minecraft.getMinecraft().setServerData(new ServerData("EaglercraftV Realm", "shared:" + relay.address, false));
 	}
 
 	public boolean doesGuiPauseGame() {

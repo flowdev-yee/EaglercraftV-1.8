@@ -13,13 +13,13 @@
   - Made the integrated PBR resource pack
   - Added touch and mobile device support
   - Made the multiplayer backends
-  - Made the shared world relay server
+  - Made the EaglercraftV Realm relay server
   - Made the patch and build system
 
  ayunami2000:
 
   - Many bug fixes
-  - WebRTC shared worlds
+  - WebRTC EaglercraftV Realms
   - WebRTC voice chat
   - Worked on touch support
   - Made velocity plugin work

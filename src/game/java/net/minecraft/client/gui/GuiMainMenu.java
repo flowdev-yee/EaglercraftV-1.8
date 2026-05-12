@@ -28,6 +28,8 @@ import net.lax1dude.eaglercraft.v1_8.internal.EnumCursorType;
 import net.lax1dude.eaglercraft.v1_8.log4j.LogManager;
 import net.lax1dude.eaglercraft.v1_8.log4j.Logger;
 import net.lax1dude.eaglercraft.v1_8.minecraft.MainMenuSkyboxTexture;
+import net.lax1dude.eaglercraft.v1_8.vclient.EaglercraftVClient;
+import net.lax1dude.eaglercraft.v1_8.vclient.GuiVPanel;
 import net.lax1dude.eaglercraft.v1_8.opengl.EaglercraftGPU;
 import net.lax1dude.eaglercraft.v1_8.opengl.GlStateManager;
 import net.lax1dude.eaglercraft.v1_8.opengl.WorldRenderer;
@@ -122,7 +124,7 @@ public class GuiMainMenu extends GuiScreen implements GuiYesNoCallback {
 
 	public GuiMainMenu() {
 		instance = this;
-		this.splashText = "missingno";
+		this.splashText = EaglercraftVClient.STARTUP_TEXT;
 		updateCheckerOverlay = new GuiUpdateCheckerOverlay(false, this);
 		BufferedReader bufferedreader = null;
 
@@ -292,6 +294,7 @@ public class GuiMainMenu extends GuiScreen implements GuiYesNoCallback {
 				I18n.format("menu.editProfile", new Object[0])));
 
 		this.buttonList.add(new GuiButtonLanguage(5, this.width / 2 - 124, i + 72 + 12));
+		this.buttonList.add(new GuiButton(16, this.width / 2 + 104, i + 72 + 12, 64, 20, "VPanel"));
 
 		if (isFork) {
 			this.openGLWarning1 = EaglercraftVersion.mainMenuStringE;
@@ -368,6 +371,10 @@ public class GuiMainMenu extends GuiScreen implements GuiYesNoCallback {
 
 		if (parGuiButton.id == 4) {
 			this.mc.displayGuiScreen(new GuiScreenEditProfile(this));
+		}
+
+		if (parGuiButton.id == 16) {
+			this.mc.displayGuiScreen(new GuiVPanel(this));
 		}
 
 		if (parGuiButton.id == 14) {
@@ -611,6 +618,7 @@ public class GuiMainMenu extends GuiScreen implements GuiYesNoCallback {
 			this.drawGradientRect(0, 0, this.width, this.height, -2130706433, 16777215);
 			this.drawGradientRect(0, 0, this.width, this.height, 0, Integer.MIN_VALUE);
 		}
+		drawEaglercraftVBrand(k - 54, b0 + 4);
 		this.mc.getTextureManager().bindTexture(minecraftTitleTextures);
 		GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
 		boolean minc = (double) this.updateCounter < 1.0E-4D;
@@ -740,6 +748,17 @@ public class GuiMainMenu extends GuiScreen implements GuiYesNoCallback {
 
 		this.updateCheckerOverlay.drawScreen(i, j, f);
 		super.drawScreen(i, j, f);
+	}
+
+	private void drawEaglercraftVBrand(int x, int y) {
+		int accent = EaglercraftVClient.getInstance().getTheme().accentColor;
+		drawRect(x + 2, y, x + 9, y + 8, accent);
+		drawRect(x + 28, y, x + 35, y + 8, accent);
+		drawRect(x + 7, y + 8, x + 15, y + 22, accent);
+		drawRect(x + 22, y + 8, x + 30, y + 22, accent);
+		drawRect(x + 14, y + 22, x + 23, y + 30, accent);
+		drawRect(x, y + 32, x + 38, y + 34, 0xAA000000);
+		drawString(this.fontRendererObj, EaglercraftVClient.CLIENT_NAME, x - 18, y + 38, 0xFFFFFF);
 	}
 
 	/**+
